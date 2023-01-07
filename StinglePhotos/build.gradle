@@ -20,9 +20,10 @@ android {
             keyPassword keystoreProperties['keyPassword']
         }
     }
+    namespace 'org.stingle.photos'
     compileSdkVersion 31
     defaultConfig {
-        applicationId "org.c2FmZQ.photos"
+        applicationId "org.stingle.photos"
         minSdkVersion 23
         targetSdkVersion 31
     }
@@ -31,7 +32,7 @@ android {
             signingConfig signingConfigs.release
             resValue "string", "app_name", "Stingle Photos"
             resValue "string", "camera", "Camera"
-            resValue "string", "content_provider", "org.c2FmZQ.photos.share"
+            resValue "string", "content_provider", "org.stingle.photos.share"
             resValue "string", "api_server_url", "https://api.stingle.org/"
             resValue "string", "default_home_folder_name", "StinglePhotos"
             buildConfigField "Boolean", "ALLOW_INSECURE_TLS", 'false'
@@ -40,10 +41,11 @@ android {
         debug {
             applicationIdSuffix '.debug'
             versionNameSuffix '-debug'
-            resValue "string", "content_provider", "org.c2FmZQ.photos.share.debug"
+            resValue "string", "content_provider", "org.stingle.photos.share.debug"
             resValue "string", "app_name", "Stingle Photos Dev"
             resValue "string", "camera", "Camera Dev"
-            resValue "string", "api_server_url", "https://192.168.1.2/"
+            //resValue "string", "api_server_url", "https://192.168.1.2/"
+            resValue "string", "api_server_url", "https://maowan.cc:9907/"
             //resValue "string", "api_server_url", "https://apidev.stingle.org/"
             resValue "string", "default_home_folder_name", "StinglePhotosDev"
             buildConfigField "Boolean", "ALLOW_INSECURE_TLS", 'true'
@@ -63,7 +65,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     ndkVersion '21.3.6528147'
-    buildToolsVersion '30.0.2'
     flavorDimensions 'version'
 
     buildFeatures {
